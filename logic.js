@@ -106,10 +106,16 @@ const displayController = (() => {
 
 		// use bootstrap for left, mid, right justified of rows 
 		$("#header").html(`
-			<div class="my-name">${header.name}</div>
-			<div class="my-title">${header.title}</div>
-			<div class="header-row-1"><span>Ph: ${header.phone}</span> <span>${header.websites.github}</span> <span>${header.email}</span></div> 
-			<div class="header-row-2">${header.websites.github}</div>
+			<div class="name-container">
+				<div class="my-name font-weight-bold">${header.name}</div>
+				<div class="my-title">${header.title}</div>
+			</div>			
+			<div class="header-row-1">
+				<span class="float-left">Ph: ${header.phone}</span>
+				<span>${header.websites.github}</span>
+				<span class="float-right">${header.email}</span>
+				</div>
+			<div class="header-row-2">${header.websites.linkedin}</div>
 			`
 		);
 	}

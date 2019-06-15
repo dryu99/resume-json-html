@@ -21,7 +21,7 @@ body {
 }
 
 section {
-	margin: 30px auto;
+	margin-bottom: 7.5pt;
 }
 
 .section-title {
@@ -45,8 +45,11 @@ ul ul {
 
 /* HEADER STYLES */
 
+.name-container {
+	margin-bottom: 7.5pt;
+}
+
 .my-name {
 	font-size: 16pt;
-	font-weight: bold;
 }
 
