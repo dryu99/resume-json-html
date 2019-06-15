@@ -18,39 +18,72 @@ const dataController = (() => {
 const template = (() => {
 	
 	const skill = (skill) => {
-		return `<div class="skill">
-							<b>${skill.type}</b>: ${skill.names.join(" | ")}
-						</div>`
+		return `
+		<div class="skill">
+			<b>${skill.type}</b>: ${skill.names.join(" | ")}
+		</div>
+		`
 	};
 
 	const project = (project) => {
-		return `<div class=project"> 
-							<b>${project.name}</b> (${project.description}) ${project.startDate}-${project.endDate}
-							<ul>
-								${project.highlights.map(_projectHighlight).join("")}
-							</ul>
-						</div>`
+		return `
+		<div class="project"> 
+			<b>${project.name}</b> (${project.description}) ${project.startDate}-${project.endDate}
+			<ul>
+				${project.highlights.map(_highlight).join("")}
+			</ul>
+		</div>
+		`
+	};
+
+	const job = (job) => {
+		return `
+			<div class="job">
+				<b>${job.position}</b>, (${job.organization}), ${job.location} ${job.startDate}-${job.endDate}
+				<ul>
+					${job.highlights.map(_highlight).join("")}
+				</ul>
+			</div>		
+		`
+	};
+
+	const award = (award) => {
+		return `<span>${award.title}, ${award.date} (${award.summary})</span>`
+	};
+
+	const course = (course) => {
+		return `<span>${course.name} (${course.grade}%)</span>`
 	};
 
 	// produce <li> that represents given highlight 
-	const _projectHighlight = (highlight) => {
-		return `<li>${highlight.main}
-								${highlight.subs.length !== 0 ?  _highlightSubs(highlight.subs) : ""}
-						</li>`
+	const _highlight = (highlight) => {
+		if (highlight.subs === undefined) return `<li>${highlight}</li>`
+
+		return `
+		<li>${highlight.main}
+				${highlight.subs !== undefined && highlight.subs.length !== 0 ?
+						_highlightSubs(highlight.subs) : ""}
+		</li>
+		`
 	};
 
 	// produce <ul> that represents given highlight subs 
 	const _highlightSubs = (hlSubs) => {
-		return `<ul>
-							${hlSubs.map(sub => {
-								return `<li>${sub}</li>`
-							}).join("")}
-						</ul>`				
+		return `
+		<ul>
+			${hlSubs.map(sub => {
+				return `<li>${sub}</li>`
+			}).join("")}
+		</ul>
+		`				
 	};
 
 	return { 
 		skill,
-		project
+		project,
+		job,
+		award,
+		course
 	 };
 
 })();
@@ -64,6 +97,8 @@ const displayController = (() => {
 		_renderHeader();
 		_renderSkills();
 		_renderProjects();
+		_renderWork();
+		_renderEducation();
 	};
 
 	const _renderHeader = () => {
@@ -96,6 +131,29 @@ const displayController = (() => {
 		$(".projects").html(`
 			${_renderTitle("TECHNICAL PROJECTS")}
 			${projects.map(template.project).join("")} 			
+			`
+		);
+	};
+
+	const _renderWork = () => {
+		const work = _resume.work; 
+
+		$(".work").html(`
+			${_renderTitle("WORK EXPERIENCE")}
+			${work.map(template.job).join("")} 			
+			`
+		);
+	};
+
+	const _renderEducation = () => {
+		const education = _resume.education; 
+
+		$(".education").html(`
+			${_renderTitle("EDUCATION")}
+			<div class="ed-summary"><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location} ${education.endDate}</div>
+			<div class="ed-spec-gpa"><b>Specialization</b>: ${education.specialization} <span>Accumulated GPA: ${education.gpa}</span></div>
+			<div class="ed-awards"><b>Awards and Scholarships:</b> ${education.awards.map(template.award).join(", ")}</div>			
+			<div class="ed-courses"><b>Key Courses:</b> ${education.courses.map(template.course).join(", ")}</div>			
 			`
 		);
 	};
