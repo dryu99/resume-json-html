@@ -33,14 +33,54 @@ const data =
 		]
 	}],
   "projects": [{
+		"name": "The Odin Project",
+		"description": "(Open Source Project / Online Curriculum)",
+		"startDate": "Nov 2018",
+		"endDate": "Present",  
+		"highlights": [
+			{
+				"main": "Contribute to the Odin Project’s GitHub repository by utilizing various languages and frameworks to construct web applications accessible by public.",
+				"subs": []
+			},
+			{
+				"main": "Modeled a library database that users can add and remove books from.",
+				"subs": [
+					"Designed and implemented table interface and book subsmission form with HTML5, CSS and JavaScript.",
+					"Learned and applied JavaScript prototypes to better structure and manipulate book objects."
+				]
+			},
+			{
+				"main": "Implemented an Etch-a-Sketch application, acts as a re-sizeable drawing pad.",
+				"subs": [
+					"Utilized HTML5, CSS, and JavaScript to implement sketch application’s graphic user interface, and its mouseover drawing and re-sizing functionality."
+				]
+			},
+			{
+				"main": "Reproduced a calculator which users can operate for basic arithmetic computations with mouse or keyboard clicks.",
+				"subs": [
+					"Improved JavaScript abilities by implementing click event handlers and manipulating a calculator object."
+				]
+			}					
+		]
+	},
+	{
 		"name": "Cross-Platform Mobile Map Application",
 		"description": "Volunteer",
 		"startDate": "Mar 2019",
 		"endDate": "Apr 2019",  
 		"highlights": [
-			"Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
-			"Implemented and debugged map features, such as custom markers and popups, by using JavaScript and React Native.",
-			"Applied GitHub workflow to collectively work and communicate with team members."
+			{
+				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+				"subs": []
+			},
+			{
+				"main": "Implemented and debugged map features, such as custom markers and popups, by using JavaScript and React Native.",
+				"subs": []
+			},
+			{
+				"main": "Applied GitHub workflow to collectively work and communicate with team members.",
+				"subs": []
+			}						
 		]
 	}],
   "work": [{
