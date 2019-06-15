@@ -105,10 +105,10 @@ const displayController = (() => {
 		const header = _resume.header; // maybe make a getHeader method in data control?
 
 		// use bootstrap for left, mid, right justified of rows 
-		$(".header").html(`
+		$("#header").html(`
 			<div class="my-name">${header.name}</div>
 			<div class="my-title">${header.title}</div>
-			<div class="header-row-1">Ph: ${header.phone} ${header.websites.github} ${header.email}</div> 
+			<div class="header-row-1"><span>Ph: ${header.phone}</span> <span>${header.websites.github}</span> <span>${header.email}</span></div> 
 			<div class="header-row-2">${header.websites.github}</div>
 			`
 		);
@@ -117,7 +117,7 @@ const displayController = (() => {
 	const _renderSkills = () => {
 		const skills = _resume.skills; 
 
-		$(".skills").html(`
+		$("#skills").html(`
 			${_renderTitle("SKILLS")}
 			${skills.map(template.skill).join("")} 			
 			<span class="footnote">*currently acquiring</span>
@@ -128,7 +128,7 @@ const displayController = (() => {
 	const _renderProjects = () => {
 		const projects = _resume.projects; 
 
-		$(".projects").html(`
+		$("#projects").html(`
 			${_renderTitle("TECHNICAL PROJECTS")}
 			${projects.map(template.project).join("")} 			
 			`
@@ -138,7 +138,7 @@ const displayController = (() => {
 	const _renderWork = () => {
 		const work = _resume.work; 
 
-		$(".work").html(`
+		$("#work").html(`
 			${_renderTitle("WORK EXPERIENCE")}
 			${work.map(template.job).join("")} 			
 			`
@@ -148,7 +148,7 @@ const displayController = (() => {
 	const _renderEducation = () => {
 		const education = _resume.education; 
 
-		$(".education").html(`
+		$("#education").html(`
 			${_renderTitle("EDUCATION")}
 			<div class="ed-summary"><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location} ${education.endDate}</div>
 			<div class="ed-spec-gpa"><b>Specialization</b>: ${education.specialization} <span>Accumulated GPA: ${education.gpa}</span></div>
@@ -160,7 +160,7 @@ const displayController = (() => {
 
 
 	const _renderTitle = (title) => {
-		return `<div class="section-title">${title}</div>`;
+		return `<div class="section-title font-weight-bold text-center">${title}<hr></div>`;
 	};
 	
 	return { render };
