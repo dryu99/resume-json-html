@@ -6,15 +6,11 @@ const dataController = (() => {
 
 	const getResume = () => _resume;
 
-	/**
-	 * maybe make more functions to access each part of the resume? 
-	 */
-
 	return { getResume };
-
 })();
 
-// Template module
+
+// Template module (given an object, render appropriate html)
 const template = (() => {
 	
 	const skill = (skill) => {
@@ -40,7 +36,8 @@ const template = (() => {
 	const job = (job) => {
 		return `
 			<div class="job">
-				<b>${job.position}</b>, (${job.organization}), ${job.location} ${job.startDate}-${job.endDate}
+				<span><b>${job.position}</b>, <i>${job.organization}</i>, ${job.location}</span> 
+				<span class="float-right">${job.startDate}-${job.endDate}</span>
 				<ul>
 					${job.highlights.map(_highlight).join("")}
 				</ul>
