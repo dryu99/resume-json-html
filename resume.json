@@ -41,6 +41,17 @@
 			"Implemented and debugged map features, such as custom markers and popups, by using JavaScript and React Native.",
 			"Applied GitHub workflow to collectively work and communicate with team members."
 		]
+	},
+	{
+		"name": "Cross-Platform Mobile Map Application",
+		"description": "Volunteer",
+		"startDate": "Mar 2019",
+		"endDate": "Apr 2019",  
+		"highlights": [
+			"Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+			"Implemented and debugged map features, such as custom markers and popups, by using JavaScript and React Native.",
+			"Applied GitHub workflow to collectively work and communicate with team members."
+		]
 	}],
   "work": [{
 		"position": "Teaching Assistant (Systematic Program Design)",
