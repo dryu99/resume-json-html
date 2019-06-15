@@ -24,11 +24,11 @@ const template = (() => {
 	const project = (project) => {
 		return `
 		<div class="project"> 
-		<span><b>${project.name}</b> (${project.description})</span> 
-		<span class="float-right">${project.startDate}-${project.endDate}</span>
-			<ul>
-				${project.highlights.map(_highlight).join("")}
-			</ul>
+			<span><b>${project.name}</b> (${project.description})</span> 
+			<span class="float-right">${project.startDate}-${project.endDate}</span>
+				<ul>
+					${project.highlights.map(_highlight).join("")}
+				</ul>
 		</div>
 		`
 	};
@@ -154,10 +154,20 @@ const displayController = (() => {
 
 		$("#education").html(`
 			${_renderTitle("EDUCATION")}
-			<div class="ed-summary"><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location} ${education.endDate}</div>
-			<div class="ed-spec-gpa"><b>Specialization</b>: ${education.specialization} <span>Accumulated GPA: ${education.gpa}</span></div>
-			<div class="ed-awards"><b>Awards and Scholarships:</b> ${education.awards.map(template.award).join(", ")}</div>			
-			<div class="ed-courses"><b>Key Courses:</b> ${education.courses.map(template.course).join(", ")}</div>			
+			<div class="ed-summary">
+				<span><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location}</span> 
+				<span class="float-right">Completion: ${education.endDate}</span>
+			</div>
+			<div class="ed-spec-gpa">
+				<span><b>Specialization</b>: ${education.specialization}</span>
+				<span class="float-right">Accumulated GPA: ${education.gpa}</span>
+			</div>
+			<div class="ed-awards">
+				<b>Awards and Scholarships:</b> ${education.awards.map(template.award).join(", ")}
+			</div>			
+			<div class="ed-courses">
+				<b>Key Courses:</b> ${education.courses.map(template.course).join(", ")}
+			</div>			
 			`
 		);
 	};
