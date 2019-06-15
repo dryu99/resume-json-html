@@ -28,7 +28,8 @@ const template = (() => {
 	const project = (project) => {
 		return `
 		<div class="project"> 
-			<b>${project.name}</b> (${project.description}) ${project.startDate}-${project.endDate}
+		<span><b>${project.name}</b> (${project.description})</span> 
+		<span class="float-right">${project.startDate}-${project.endDate}</span>
 			<ul>
 				${project.highlights.map(_highlight).join("")}
 			</ul>
@@ -110,12 +111,12 @@ const displayController = (() => {
 				<div class="my-name font-weight-bold">${header.name}</div>
 				<div class="my-title">${header.title}</div>
 			</div>			
-			<div class="header-row-1">
+			<div>
 				<span class="float-left">Ph: ${header.phone}</span>
 				<span>${header.websites.github}</span>
 				<span class="float-right">${header.email}</span>
-				</div>
-			<div class="header-row-2">${header.websites.linkedin}</div>
+			</div>
+			<div>${header.websites.linkedin}</div>
 			`
 		);
 	}
@@ -126,7 +127,7 @@ const displayController = (() => {
 		$("#skills").html(`
 			${_renderTitle("SKILLS")}
 			${skills.map(template.skill).join("")} 			
-			<span class="footnote">*currently acquiring</span>
+			<span class="footnote float-right">*currently acquiring</span>
 			`
 		);
 	};
