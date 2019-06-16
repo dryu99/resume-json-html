@@ -48,7 +48,12 @@ ul {
 
 ul ul {
 	list-style-type: circle;	
-	padding-left: 40px;
+	padding-left: 3em;
+}
+
+li { /* trick to indent wrapped text in <li>*/
+	padding-left: 1.5em; 
+	text-indent: -1.5em;
 }
 
 /* HEADER STYLES */
