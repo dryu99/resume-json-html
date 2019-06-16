@@ -24,7 +24,11 @@ i {
 .site-title {	
 	margin-top: 10px;
 
+<<<<<<< HEAD
 	text-decoration: underline;
+=======
+	font-weight: bold;
+>>>>>>> 7ea9a866974a5bf3c757693df4d5baf1014b8ec5
 }
 
 
@@ -101,7 +105,11 @@ li { /* trick to indent wrapped text in <li>*/
 		background: none;
 	}
 
+<<<<<<< HEAD
 	.intro, footer {
+=======
+	.intro {
+>>>>>>> 7ea9a866974a5bf3c757693df4d5baf1014b8ec5
 		display: none;
 	}
 
