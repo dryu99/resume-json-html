@@ -1,6 +1,7 @@
 /**
  * API Module
  * @desc basic jSON request API  
+ * @note credit for code goes to Paul Salaets: https://paulsalaets.com/posts/json-api-with-github-pages
  */
 const api = (() => {
 
