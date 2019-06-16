@@ -3,25 +3,26 @@
  * @desc included fns directly render html for primary resume sections  
  */
 const displayController = (() => {
-	let _resume;
 
-	const setResume = (resume) => {
-		_resume = resume
-	};
-
-	const render = () => {
+	const render = (resume) => {
 		// $(".site-title").append('<img class="me-pic" src="./images/pic-of-me.jpeg" alt="Picture of Me">');		
-		$("#coop-container").append('<img class="float-right" src="./images/co-op-header.png" alt="Co-op Header">');
+		// $(".coop-container").append('<img class="float-right" src="./images/co-op-header.png" alt="Co-op Header">');
+		_renderImages(resume);
 
-		_renderHeader();
-		_renderSkills();
-		_renderProjects();
-		_renderWork();
-		_renderEducation();
+		_renderHeader(resume);
+		_renderSkills(resume);
+		_renderProjects(resume);
+		_renderWork(resume);
+		_renderEducation(resume);
 	};
 
-	const _renderHeader = () => {
-		const header = _resume.header; 
+	const _renderImages = (resume) => {
+		console.log(resume.images);
+		$(".me-pic").attr("src", resume.images.selfImage);
+	}
+
+	const _renderHeader = (resume) => {
+		const header = resume.header; 
 
 		$("#header").html(`
 			<div class="name-container">
@@ -38,8 +39,8 @@ const displayController = (() => {
 		);
 	}
 
-	const _renderSkills = () => {
-		const skills = _resume.skills; 
+	const _renderSkills = (resume) => {
+		const skills = resume.skills; 
 
 		$("#skills").html(`
 			${template.title("SKILLS")}
@@ -49,8 +50,8 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderProjects = () => {
-		const projects = _resume.projects; 
+	const _renderProjects = (resume) => {
+		const projects = resume.projects; 
 
 		$("#projects").html(`
 			${template.title("TECHNICAL PROJECTS")}
@@ -59,8 +60,8 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderWork = () => {
-		const work = _resume.work; 
+	const _renderWork = (resume) => {
+		const work = resume.work; 
 
 		$("#work").html(`
 			${template.title("WORK EXPERIENCE")}
@@ -69,8 +70,8 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderEducation = () => {
-		const education = _resume.education; 
+	const _renderEducation = (resume) => {
+		const education = resume.education; 
 
 		$("#education").html(`
 			${template.title("EDUCATION")}
@@ -90,7 +91,7 @@ const displayController = (() => {
 		);
 	};
 	
-	return { setResume, render };
+	return { render };
 })();
 
 
@@ -207,14 +208,15 @@ const dateHandler = (() => {
 	return { formatBegToEnd, formatYear };
 })();
 
+// asynchronous jSON request, page doesn't load until jSON is fully parsed
 api.requestJSON("https://dryu99.github.io/resume-json-html-converter/resume.json", 
 	(error, data) => {
 		if (error) {
 			console.log("There was an error :(");
+			// displayController.render(falseData);	if error occurs, render JS object === to jSON 
 		} else {
 			console.log("JSON retrieved successfully! :)");
-			displayController.setResume(data);
-			displayController.render();
+			displayController.render(data);
 		}
 	});
 

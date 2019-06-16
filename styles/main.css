@@ -30,7 +30,7 @@ section,
 	margin-bottom: 0.75em;
 }
 
-#paper-container {
+.paper-container {
 	width: 8.5in;
 	height: 11in;
 	margin: 30px auto;
@@ -42,11 +42,11 @@ section,
 	background-color: white;
 }
 
-#coop-container {
+.coop-container {
 	margin: 5px 2cm 0 2cm;
 }
 
-#resume-container {
+.resume-container {
 	margin: 1.5cm 2cm;
 }
 
@@ -97,7 +97,7 @@ li { /* trick to indent wrapped text in <li>*/
 		display: none;
 	}
 
-	#paper-container {
+	.paper-container {
 		margin: 100px auto;	
 		border: 0.5px solid black;	
 	}
