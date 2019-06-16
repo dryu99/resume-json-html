@@ -1,25 +1,32 @@
 /** @group general page */
 body {
 	background: #57b5ff;  
+	font-family: "Lato", Arial, sans-serif;
 }
 
 i {
 	font-style: italic;	
 }
 
-.site-title {
+.intro {
+	width: 8.5in;
+	margin: 0 auto;
 	margin-top: 30px;
-	margin-bottom: -30px;
-
-	font-family: "Lato", Arial, sans-serif;
-	font-weight: bold;
 }
 
-.me-pic {
-	max-width: 10%;
+.me-img {
+	max-width: 50%;
 
+	border:	5px solid #0080e3;
 	border-radius: 100%;
 }
+
+.site-title {	
+	margin-top: 10px;
+
+	text-decoration: underline;
+}
+
 
 /** @group resume components */
 section,
@@ -33,7 +40,7 @@ section,
 .paper-container {
 	width: 8.5in;
 	height: 11in;
-	margin: 30px auto;
+	margin: 30px auto 75px auto;
 
 	font-size: 10pt;
 	font-family: 'Times New Roman', Times, serif;
@@ -47,7 +54,7 @@ section,
 }
 
 .resume-container {
-	margin: 1.5cm 2cm;
+	margin: 0 2cm 1.5cm 2cm;
 }
 
 section {
@@ -87,13 +94,14 @@ li { /* trick to indent wrapped text in <li>*/
 	font-size: 0.8em;
 }
 
+
 /** @group print */
 @media print {
 	body {
 		background: none;
 	}
 
-	.site-title {
+	.intro, footer {
 		display: none;
 	}
 

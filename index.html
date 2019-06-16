@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Daniel Ryu's Resume</title>		
 		<link rel="stylesheet" href="./styles/reset.css" type="text/css">		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,13 +11,13 @@
 		<link rel="stylesheet" href="./styles/main.css" type="text/css">
 	</head>
 	<body>
-		<div class="intro">
-				<h1 class="site-title text-center">(Resume	> jSON > HTML)</h1>
-				<img class="me-pic" alt="Picture of Me">
+		<div class="intro text-center">
+				<img class="me-img" alt="Picture of Me">
+				<h3 class="site-title">Resume for Daniel Ryu</h3>								
 		</div>
 		<div class="paper-container">
 			<div class="coop-container">
-				<img class="float-right" alt="Co-op Header">
+				<img class="coop-img float-right" alt="Co-op Header">
 			</div>
 			<div class="resume-container">
 				<section id="header" class="text-center"></section>
@@ -26,7 +27,11 @@
 				<section id="education"></section>
 			</div>
 		</div>
+		<footer class="text-center">
+			<small>Aimsio Intern Assignment: "Resume	> jSON > HTML", by Daniel Ryu June 2019</small>							
+		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="./resume-mock-json.js"></script>
 		<script src="./api.js"></script>
 		<script src="./logic.js"></script>
 	</body>
