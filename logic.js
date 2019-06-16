@@ -106,7 +106,8 @@ const displayController = (() => {
 	};
 
 	const render = () => {
-		$("#coop-container").prepend('<img class="coop float-right" src="./images/co-op-header.png">');
+		$(".site-title").append('<img class="me-pic" src="./images/pic-of-me.jpeg" alt="Picture of Me">');		
+		$("#coop-container").append('<img class="float-right" src="./images/co-op-header.png" alt="Co-op Header">');
 
 		_renderHeader();
 		_renderSkills();
