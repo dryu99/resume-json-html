@@ -181,16 +181,14 @@ const displayController = (() => {
 				<span><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location}</span> 
 				<span class="float-right">Completion: ${template.date(education.endDate)}</span>
 			</div>
-			<div class="ed-spec-gpa">
-				<span><b>Specialization</b>: ${education.specialization}</span>
-				<span class="float-right">Accumulated GPA: ${education.gpa}</span>
-			</div>
-			<div class="ed-awards">
-				<b>Awards and Scholarships:</b> ${education.awards.map(template.award).join(", ")}
-			</div>			
-			<div class="ed-courses">
-				<b>Key Courses:</b> ${education.courses.map(template.course).join(", ")}
-			</div>			
+			<ul>
+				<li>
+					<b>Specialization</b>: ${education.specialization}</span> 
+					<span class="float-right">Accumulated GPA: ${education.gpa}</span>
+				</li>
+				<li><b>Awards and Scholarships:</b> ${education.awards.map(template.award).join(", ")}</li>
+				<li><b>Key Courses:</b> ${education.courses.map(template.course).join(", ")}</li>
+			</ul>			
 			`
 		);
 	};
