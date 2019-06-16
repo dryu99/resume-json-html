@@ -5,10 +5,7 @@
 const displayController = (() => {
 
 	const render = (resume) => {
-		// $(".site-title").append('<img class="me-pic" src="./images/pic-of-me.jpeg" alt="Picture of Me">');		
-		// $(".coop-container").append('<img class="float-right" src="./images/co-op-header.png" alt="Co-op Header">');
 		_renderImages(resume);
-
 		_renderHeader(resume);
 		_renderSkills(resume);
 		_renderProjects(resume);
@@ -17,8 +14,8 @@ const displayController = (() => {
 	};
 
 	const _renderImages = (resume) => {
-		console.log(resume.images);
-		$(".me-pic").attr("src", resume.images.selfImage);
+		$(".me-img").attr("src", resume.images.selfImage);
+		$(".coop-img").attr("src", resume.images.headerImage);
 	}
 
 	const _renderHeader = (resume) => {
@@ -209,11 +206,13 @@ const dateHandler = (() => {
 })();
 
 // asynchronous jSON request, page doesn't load until jSON is fully parsed
-api.requestJSON("https://dryu99.github.io/resume-json-html-converter/resume.json", 
+api.requestJSON("https://dryu99.github.io/resume-json-html/resume.json", 
 	(error, data) => {
 		if (error) {
-			console.log("There was an error :(");
-			// displayController.render(falseData);	if error occurs, render JS object === to jSON 
+			console.log("There was an error :(, render mock data");
+
+			// if error occurs, render backup JS object === to jSON 
+			displayController.render(mockData);					
 		} else {
 			console.log("JSON retrieved successfully! :)");
 			displayController.render(data);
