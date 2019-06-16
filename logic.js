@@ -114,6 +114,8 @@ const displayController = (() => {
 	const _resume = dataController.getResume();
 
 	const render = () => {
+		$("#coop-container").prepend('<img class="coop float-right" src="./images/co-op-header.png">');
+
 		_renderHeader();
 		_renderSkills();
 		_renderProjects();
