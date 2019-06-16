@@ -1,15 +1,3 @@
-
-
-// Data Controller module
-const dataController = (() => {
-	const _resume = data; // parsing would happen here
-
-	const getResume = () => _resume;
-
-	return { getResume };
-})();
-
-
 // Template module (given an object, render appropriate html)
 const template = (() => {
 	
@@ -86,7 +74,7 @@ const template = (() => {
 									"July","Aug", "Sept",
 									"Oct","Nov", "Dec"];
 		
-		const formatDate = (date) => {
+		function formatDate(date) {
 			return months[date.getMonth()] + " " + date.getFullYear();
 		}
 
@@ -111,7 +99,11 @@ const template = (() => {
 
 // Display Controller module
 const displayController = (() => {
-	const _resume = dataController.getResume();
+	let _resume;
+
+	const setResume = (resume) => {
+		_resume = resume
+	};
 
 	const render = () => {
 		$("#coop-container").prepend('<img class="coop float-right" src="./images/co-op-header.png">');
@@ -197,8 +189,19 @@ const displayController = (() => {
 		return `<div class="section-title font-weight-bold text-center">${title}<hr></div>`;
 	};
 	
-	return { render };
+	return { setResume, render };
 })();
 
-displayController.render();
+
+api.requestJSON("https://dryu99.github.io/resume-json-html-converter/resume.json", 
+	(error, data) => {
+		if (error) {
+			console.log("There was an error :(");
+		} else {
+			console.log("JSON retrieved successfully! :)");
+			displayController.setResume(data);
+			displayController.render();
+		}
+	});
+
 
