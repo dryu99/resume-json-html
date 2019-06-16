@@ -37,8 +37,8 @@ const data =
 		{
 		"name": "The Odin Project",
 		"description": "Open Source Project / Online Curriculum",
-		"startDate": "Nov 2018",
-		"endDate": "Present",  
+		"startDate": "2018-10-01",
+		"endDate": "",  
 		"highlights": [
 			{
 				"main": "Contribute to the Odin Project’s GitHub repository by utilizing various languages and frameworks to construct web applications accessible by public.",
@@ -68,8 +68,8 @@ const data =
 	{
 		"name": "Cross-Platform Mobile Map Application",
 		"description": "Volunteer",
-		"startDate": "Mar 2019",
-		"endDate": "Apr 2019",  
+		"startDate": "2019-02-01",
+		"endDate": "2019-03-01",  
 		"highlights": [
 			{
 				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
@@ -88,8 +88,8 @@ const data =
 	{
 		"name": "Mobile Activity Recommender Application",
 		"description": "nwHacks, Hackathon",
-		"startDate": "Jan 2019",
-		"endDate": "Jan 2019",  
+		"startDate": "2019-00-01",
+		"endDate": "2019-00-01",  
 		"highlights": [
 			{
 				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce \
@@ -101,8 +101,8 @@ const data =
 	{
 		"name": "Budgeting Application",
 		"description": "Academic",
-		"startDate": "Sep 2018",
-		"endDate": "Dec 2019",  
+		"startDate": "2018-08-01",
+		"endDate": "2018-11-01",  
 		"highlights": [
 			{
 				"main": "Built an application using Java and IntelliJ IDEA that records expenses based on dates and categories.",
@@ -119,8 +119,8 @@ const data =
 		"position": "Teaching Assistant (Systematic Program Design)",
 		"organization": "UBC Dept. of Computer Science",
 		"location": "Vancouver, BC",    
-		"startDate": "Sep 2018",
-		"endDate": "Present",
+		"startDate": "2018-08-01",
+		"endDate": "",
 		"highlights": [
 			"Provided one-on-one and group mentorship for classes of 30 students by conducting weekly labs to enhance understanding of systematic design and fundamental programming concepts such as recursion, trees, and graphs.",
 			"Minimized grading turnaround time by working mindfully within established timelines for semi-weekly assignments."
@@ -130,8 +130,8 @@ const data =
 		"position": "Valet Attendant",
 		"organization": "The Bicycle Valet",
 		"location": "Vancouver, BC",    
-		"startDate": "Aug 2016",
-		"endDate": "Sep 2018",
+		"startDate": "2016-07-01",
+		"endDate": "2018-08-01",
 		"highlights": [
 			"Valeted hundreds of bikes around the Lower Mainland by setting up fenced perimeters, parking and returning bikes, and professionally interacting with customers."
 		]
@@ -140,17 +140,17 @@ const data =
 		"degree": "Bachelor of Commerce",
 		"school": "UBC Sauder School of Business",
 		"location": "Vancouver, BC",    
-		"endDate": "2023",
+		"endDate": "2023-03-01",
 		"specialization": "Combined Major in Business and Computer Science",
 		"awards": [
 			{
 				"title": "UBC Trek Excellence Scholarship",
-				"date": "2018",
+				"date": "2018-01-01",
 				"summary": "$1500 - awarded for top academic placement"
 			},
 			{
 				"title": "UBC Dorothy and Arthur Holt Scholarship",
-				"date": "2018",
+				"date": "2018-01-01",
 				"summary": "$400 - awarded for high academic achievement"
 			}],
     "gpa": "89% (4.30/4.33)",

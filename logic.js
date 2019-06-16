@@ -25,7 +25,7 @@ const template = (() => {
 		return `
 		<div class="project"> 
 			<span><b>${project.name}</b> (${project.description})</span> 
-			<span class="float-right">${project.startDate}-${project.endDate}</span>
+			<span class="float-right">${date(project.startDate,project.endDate)}</span>
 				<ul>
 					${project.highlights.map(_highlight).join("")}
 				</ul>
@@ -37,7 +37,7 @@ const template = (() => {
 		return `
 			<div class="job">
 				<span><b>${job.position}</b>, <i>${job.organization}</i>, ${job.location}</span> 
-				<span class="float-right">${job.startDate}-${job.endDate}</span>
+				<span class="float-right">${date(job.startDate,job.endDate)}</span>
 				<ul>
 					${job.highlights.map(_highlight).join("")}
 				</ul>
@@ -46,7 +46,7 @@ const template = (() => {
 	};
 
 	const award = (award) => {
-		return `<span>${award.title}, ${award.date} (${award.summary})</span>`
+		return `<span>${award.title}, ${date(award.date)} (${award.summary})</span>`
 	};
 
 	const course = (course) => {
@@ -75,13 +75,17 @@ const template = (() => {
 		</ul>
 		`				
 	};
+	 
+	// if only year is given, produce formatted year, otherwise produce formatted start-end dates
+	const date = (...args) => {
+		if (args.length === 1) return `${args[0].split("-")[0]}` 
 
-	const _date = (start, end) => {
+		let start = args[0], end = args[1];
 		let months = ["Jan", "Feb", "Mar", 
 									"Apr", "May", "June", 
 									"July","Aug", "Sept",
 									"Oct","Nov", "Dec"];
-
+		
 		const formatDate = (date) => {
 			return months[date.getMonth()] + " " + date.getFullYear();
 		}
@@ -90,7 +94,7 @@ const template = (() => {
 		let endDate = end !== "" ? formatDate(new Date(...end.split("-"))) : "";
 
 		return endDate === "" ? `${startDate}-Present` : 
-					startDate === endDate ? startDate : `${startDate}-${endDate}`;
+					startDate === endDate ? startDate : `${startDate}-${endDate}`; 
 	}
 
 	return { 
@@ -99,7 +103,7 @@ const template = (() => {
 		job,
 		award,
 		course,
-		_date
+		date
 	 };
 
 })();
@@ -173,7 +177,7 @@ const displayController = (() => {
 			${_renderTitle("EDUCATION")}
 			<div class="ed-summary">
 				<span><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location}</span> 
-				<span class="float-right">Completion: ${education.endDate}</span>
+				<span class="float-right">Completion: ${template.date(education.endDate)}</span>
 			</div>
 			<div class="ed-spec-gpa">
 				<span><b>Specialization</b>: ${education.specialization}</span>
