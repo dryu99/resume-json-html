@@ -12,7 +12,8 @@ const data =
 		"picture": "",
 		"headerImage": "" 
 	},
-	"skills": [{
+	"skills": [
+	{
 		"type": "Programming",
 		"names": [
 			"Java",
@@ -32,7 +33,8 @@ const data =
 			"React*"			
 		]
 	}],
-  "projects": [{
+  "projects": [
+		{
 		"name": "The Odin Project",
 		"description": "Open Source Project / Online Curriculum",
 		"startDate": "Nov 2018",
@@ -82,8 +84,38 @@ const data =
 				"subs": []
 			}						
 		]
+	},
+	{
+		"name": "Mobile Activity Recommender Application",
+		"description": "nwHacks, Hackathon",
+		"startDate": "Jan 2019",
+		"endDate": "Jan 2019",  
+		"highlights": [
+			{
+				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce \
+				an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+				"subs": []
+			}					
+		]
+	},
+	{
+		"name": "Budgeting Application",
+		"description": "Academic",
+		"startDate": "Sep 2018",
+		"endDate": "Dec 2019",  
+		"highlights": [
+			{
+				"main": "Built an application using Java and IntelliJ IDEA that records expenses based on dates and categories.",
+				"subs": []
+			},
+			{
+				"main": "Implemented graphic user interface with the Java Swing library and utilized JUnit for unit testing.",
+				"subs": []
+			}					
+		]
 	}],
-  "work": [{
+  "work": [
+	{
 		"position": "Teaching Assistant (Systematic Program Design)",
 		"organization": "UBC Dept. of Computer Science",
 		"location": "Vancouver, BC",    

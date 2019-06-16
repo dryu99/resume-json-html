@@ -76,12 +76,30 @@ const template = (() => {
 		`				
 	};
 
+	const _date = (start, end) => {
+		let months = ["Jan", "Feb", "Mar", 
+									"Apr", "May", "June", 
+									"July","Aug", "Sept",
+									"Oct","Nov", "Dec"];
+
+		const formatDate = (date) => {
+			return months[date.getMonth()] + " " + date.getFullYear();
+		}
+
+		let startDate = formatDate(new Date(...start.split("-")));
+		let endDate = end !== "" ? formatDate(new Date(...end.split("-"))) : "";
+
+		return endDate === "" ? `${startDate}-Present` : 
+					startDate === endDate ? startDate : `${startDate}-${endDate}`;
+	}
+
 	return { 
 		skill,
 		project,
 		job,
 		award,
-		course
+		course,
+		_date
 	 };
 
 })();
@@ -100,9 +118,8 @@ const displayController = (() => {
 	};
 
 	const _renderHeader = () => {
-		const header = _resume.header; // maybe make a getHeader method in data control?
+		const header = _resume.header; 
 
-		// use bootstrap for left, mid, right justified of rows 
 		$("#header").html(`
 			<div class="name-container">
 				<div class="my-name font-weight-bold">${header.name}</div>
@@ -172,7 +189,6 @@ const displayController = (() => {
 		);
 	};
 
-
 	const _renderTitle = (title) => {
 		return `<div class="section-title font-weight-bold text-center">${title}<hr></div>`;
 	};
@@ -181,3 +197,4 @@ const displayController = (() => {
 })();
 
 displayController.render();
+
