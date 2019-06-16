@@ -1,93 +1,173 @@
 {
-  "basics": {
-    "name": "John Doe",
-    "label": "Programmer",
-    "picture": "",
-    "email": "john@gmail.com",
-    "phone": "(912) 555-4321",
-    "website": "http://johndoe.com",
-    "summary": "A summary of John Doe...",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [{
-      "network": "Twitter",
-      "username": "john",
-      "url": "http://twitter.com/john"
-    }]
-  },
-  "work": [{
-    "company": "Company",
-    "position": "President",
-    "website": "http://company.com",
-    "startDate": "2013-01-01",
-    "endDate": "2014-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Started the company"
-    ]
-  }],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "website": "http://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "University",
-    "area": "Software Development",
-    "studyType": "Bachelor",
-    "startDate": "2011-01-01",
-    "endDate": "2013-01-01",
-    "gpa": "4.0",
+  "header": {
+    "name": "DANIEL RYU",
+    "title": "YEAR 3, BUSINESS AND COMPUTER SCIENCE STUDENT",		
+		"phone": "999.999.9999",
+    "email": "anemail@domain.com",    
+    "websites": {
+			"github": "github.com/dryu99",
+			"linkedin": "linkedin.com/in/danielryu99"
+		},
+		"picture": "",
+		"headerImage": "" 
+	},
+	"skills": [
+	{
+		"type": "Programming",
+		"names": [
+			"Java",
+			"C",
+			"C++",
+			"HTML5*",
+			"CSS*",
+			"JavaScript*"
+		]
+	},
+	{
+		"type": "Tools/Frameworks",
+		"names": [
+			"Visual Studio Code",
+			"IntelliJ IDEA",
+			"Git",
+			"React*"			
+		]
+	}],
+  "projects": [
+		{
+		"name": "The Odin Project",
+		"description": "Open Source Project / Online Curriculum",
+		"startDate": "2018-10-01",
+		"endDate": "",  
+		"highlights": [
+			{
+				"main": "Contribute to the Odin Project’s GitHub repository by utilizing various languages and frameworks to construct web applications accessible by public.",
+				"subs": []
+			},
+			{
+				"main": "Modeled a library database that users can add and remove books from.",
+				"subs": [
+					"Designed and implemented table interface and book subsmission form with HTML5, CSS and JavaScript.",
+					"Learned and applied JavaScript prototypes to better structure and manipulate book objects."
+				]
+			},
+			{
+				"main": "Implemented an Etch-a-Sketch application, acts as a re-sizeable drawing pad.",
+				"subs": [
+					"Utilized HTML5, CSS, and JavaScript to implement sketch application’s graphic user interface, and its mouseover drawing and re-sizing functionality."
+				]
+			},
+			{
+				"main": "Reproduced a calculator which users can operate for basic arithmetic computations with mouse or keyboard clicks.",
+				"subs": [
+					"Improved JavaScript abilities by implementing click event handlers and manipulating a calculator object."
+				]
+			}					
+		]
+	},
+	{
+		"name": "Cross-Platform Mobile Map Application",
+		"description": "Volunteer",
+		"startDate": "2019-02-01",
+		"endDate": "2019-03-01",  
+		"highlights": [
+			{
+				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+				"subs": []
+			},
+			{
+				"main": "Implemented and debugged map features, such as custom markers and popups, by using JavaScript and React Native.",
+				"subs": []
+			},
+			{
+				"main": "Applied GitHub workflow to collectively work and communicate with team members.",
+				"subs": []
+			}						
+		]
+	},
+	{
+		"name": "Mobile Activity Recommender Application",
+		"description": "nwHacks, Hackathon",
+		"startDate": "2019-00-01",
+		"endDate": "2019-00-01",  
+		"highlights": [
+			{
+				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+				"subs": []
+			}					
+		]
+	},
+	{
+		"name": "Budgeting Application",
+		"description": "Academic",
+		"startDate": "2018-08-01",
+		"endDate": "2018-11-01",  
+		"highlights": [
+			{
+				"main": "Built an application using Java and IntelliJ IDEA that records expenses based on dates and categories.",
+				"subs": []
+			},
+			{
+				"main": "Implemented graphic user interface with the Java Swing library and utilized JUnit for unit testing.",
+				"subs": []
+			}					
+		]
+	}],
+  "work": [
+	{
+		"position": "Teaching Assistant (Systematic Program Design)",
+		"organization": "UBC Dept. of Computer Science",
+		"location": "Vancouver, BC",    
+		"startDate": "2018-08-01",
+		"endDate": "",
+		"highlights": [
+			"Provided one-on-one and group mentorship for classes of 30 students by conducting weekly labs to enhance understanding of systematic design and fundamental programming concepts such as recursion, trees, and graphs.",
+			"Minimized grading turnaround time by working mindfully within established timelines for semi-weekly assignments."
+		]
+	},
+	{
+		"position": "Valet Attendant",
+		"organization": "The Bicycle Valet",
+		"location": "Vancouver, BC",    
+		"startDate": "2016-07-01",
+		"endDate": "2018-08-01",
+		"highlights": [
+			"Valeted hundreds of bikes around the Lower Mainland by setting up fenced perimeters, parking and returning bikes, and professionally interacting with customers."
+		]
+	}],
+  "education": {
+		"degree": "Bachelor of Commerce",
+		"school": "UBC Sauder School of Business",
+		"location": "Vancouver, BC",    
+		"endDate": "2023-03-01",
+		"specialization": "Combined Major in Business and Computer Science",
+		"awards": [
+			{
+				"title": "UBC Trek Excellence Scholarship",
+				"date": "2018-01-01",
+				"summary": "$1500 - awarded for top academic placement"
+			},
+			{
+				"title": "UBC Dorothy and Arthur Holt Scholarship",
+				"date": "2018-01-01",
+				"summary": "$400 - awarded for high academic achievement"
+			}],
+    "gpa": "89% (4.30/4.33)",
     "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "website": "http://publication.com",
-    "summary": "Description..."
-  }],
-  "skills": [{
-    "name": "Web Development",
-    "level": "Master",
-    "keywords": [
-      "HTML",
-      "CSS",
-      "Javascript"
-    ]
-  }],
-  "languages": [{
-    "language": "English",
-    "fluency": "Native speaker"
-  }],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference..."
-  }]
+			{
+				"name": "Systematic Program Design",
+				"grade": 100
+			},
+			{
+				"name": "Software Construction",
+				"grade": 95
+			},
+			{
+				"name": 	"Introduction to Computer Systems",
+				"grade": 92
+			},
+			{
+				"name": "Basic Algorithms and Data Structures",
+				"grade": 91
+			}]
+  }
 }
