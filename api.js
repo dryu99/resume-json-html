@@ -1,3 +1,7 @@
+/**
+ * API Module
+ * @desc basic jSON request API  
+ */
 const api = (() => {
 
 	const requestJSON = (url, callback) => {
@@ -6,11 +10,12 @@ const api = (() => {
 		req.addEventListener("load", onLoad);
 		req.addEventListener("error", onFail);
 		req.addEventListener("abort", onFail);
+
 		req.open("GET", url);
 		req.send();
 	
 		function onLoad(e) {
-			if (req.status >= 400) {
+			if (req.status >= 400) { 
 				onFail(e);
 			} else {
 				let json = JSON.parse(this.responseText);

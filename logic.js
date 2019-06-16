@@ -10,7 +10,7 @@ const displayController = (() => {
 	};
 
 	const render = () => {
-		$(".site-title").append('<img class="me-pic" src="./images/pic-of-me.jpeg" alt="Picture of Me">');		
+		// $(".site-title").append('<img class="me-pic" src="./images/pic-of-me.jpeg" alt="Picture of Me">');		
 		$("#coop-container").append('<img class="float-right" src="./images/co-op-header.png" alt="Co-op Header">');
 
 		_renderHeader();
@@ -181,7 +181,7 @@ const template = (() => {
 /**
  * Date Handler Module
  * @desc included fns deal with date formatting 
- * all fns expect date strings in yyyy-mm-dd format 
+ * @note all fns expect date strings in yyyy-mm-dd format 
  */
 const dateHandler = (() => {
 

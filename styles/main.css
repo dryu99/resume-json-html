@@ -1,11 +1,6 @@
-/* 
-	GENERAL STYLES 
-*/
+/** @group general page */
 body {
-	font-size: 10pt;
-	font-family: 'Times New Roman', Times, serif;
-
-	line-height: 1.3;
+	background: #57b5ff;  
 }
 
 i {
@@ -13,9 +8,10 @@ i {
 }
 
 .site-title {
-	margin-top: 20px;
+	margin-top: 30px;
+	margin-bottom: -30px;
 
-	font-family: "Trebuchet MS", Arial, sans-serif;
+	font-family: "Lato", Arial, sans-serif;
 	font-weight: bold;
 }
 
@@ -25,9 +21,7 @@ i {
 	border-radius: 100%;
 }
 
-/*
-	RESUME STYLES
-*/
+/** @group resume components */
 section,
 .section-title hr,
 .name-container,
@@ -39,9 +33,13 @@ section,
 #paper-container {
 	width: 8.5in;
 	height: 11in;
-
 	margin: 30px auto;
-	border: 0.5px solid black;
+
+	font-size: 10pt;
+	font-family: 'Times New Roman', Times, serif;
+	line-height: 1.3;
+
+	background-color: white;
 }
 
 #coop-container {
@@ -89,15 +87,18 @@ li { /* trick to indent wrapped text in <li>*/
 	font-size: 0.8em;
 }
 
-/*
-	PRINT STYLES
-*/
+/** @group print */
 @media print {
+	body {
+		background: none;
+	}
+
 	.site-title {
 		display: none;
 	}
 
 	#paper-container {
-		margin: 200px auto;		
+		margin: 100px auto;	
+		border: 0.5px solid black;	
 	}
 }
