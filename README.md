@@ -1,6 +1,7 @@
 # Resume > jSON > HTML 
 
-**Encoded my resume into jSON, then parsed the jSON into HTML. Wild. [View in browser](https://dryu99.github.io/resume-json-html/)** </br>
+**Encoded my resume into jSON, then parsed the jSON into HTML. Wild. </br> 
+[View HTML version here](https://dryu99.github.io/resume-json-html/) and [pdf version here](https://dryu99.github.io/resume-json-html/Daniel_Ryu_Resume.pdf).** </br>
 *Created for [Aimsio's](https://aimsio.com/) Intern Assignment*
 
 </br>
