@@ -1,5 +1,6 @@
-/* GENERAL STYLES */
-
+/* 
+	GENERAL STYLES 
+*/
 body {
 	font-size: 10pt;
 	font-family: 'Times New Roman', Times, serif;
@@ -8,44 +9,53 @@ body {
 }
 
 i {
-	font-style: italic;
+	font-style: italic;	
 }
 
+.title {
+	margin-top: 20px;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
 
 /*
 	RESUME STYLES
 */
+section,
+.section-title hr,
+.name-container,
+.project,
+.job {
+	margin-bottom: 0.75em;
+}
 
 #paper-container {
 	width: 8.5in;
 	height: 11in;
 
-	margin: 0 auto;
+	margin: 30px auto;
 	border: 0.5px solid black;
 }
 
 #coop-container {
-	margin: 0 2cm;
+	margin: 5px 2cm 0 2cm;
 }
 
 #resume-container {
 	margin: 1.5cm 2cm;
-	/* border: 0.5px solid black; */
 }
 
 section {
-	margin-bottom: 7.5pt;
-
 	clear: both;
 }
 
 .section-title {
-	font-size: 12pt;
+	font-size: 1.2em;
 }
 
 .section-title hr {
 	margin-top: 0; 
-	margin-bottom: 7.5pt;
 	border-top: 1px solid black;
 }
 
@@ -65,24 +75,23 @@ li { /* trick to indent wrapped text in <li>*/
 	text-indent: -1.5em;
 }
 
-/* HEADER STYLES */
-.name-container {
-	margin-bottom: 7.5pt;
-}
-
 .my-name {
-	font-size: 16pt;
+	font-size: 1.6em;
 }
 
-/* SKILLS STYLES */
 .footnote {
-	font-size: 8pt;
+	font-size: 0.8em;
 }
 
-/* PROJECTS + WORK STYLES*/
+/*
+	PRINT STYLES
+*/
+@media print {
+	.title {
+		display: none;
+	}
 
-.project,
-.job {
-	margin-bottom: 7.5pt;
+	#paper-container {
+		margin: 200px auto;		
+	}
 }
-
