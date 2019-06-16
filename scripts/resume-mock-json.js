@@ -89,7 +89,7 @@ const mockData = {
 		"endDate": "2019-00-01",  
 		"highlights": [
 			{
-				"main": "Collaborated with volunteers in the UBC Code the Change Foundation to produce an injection site map application for, Vancouver’s local non-profit group, Overdose Prevention Society.",
+				"main": "Worked in a team of 3 to create an Android application that recommends different activities based on weather, location, and user preferences. Primarily contributed to UI/UX development.",
 				"subs": []
 			}					
 		]

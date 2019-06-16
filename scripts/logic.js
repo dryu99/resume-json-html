@@ -40,7 +40,7 @@ const displayController = (() => {
 		const skills = resume.skills; 
 
 		$("#skills").html(`
-			${template.title("SKILLS")}
+			${template.title("TECHNICAL SKILLS")}
 			${skills.map(template.skill).join("")} 			
 			<span class="footnote float-right">*currently acquiring</span>
 			`
