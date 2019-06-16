@@ -93,7 +93,7 @@ li { /* trick to indent wrapped text in <li>*/
 	PRINT STYLES
 */
 @media print {
-	.title {
+	.site-title {
 		display: none;
 	}
 

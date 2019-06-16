@@ -1,103 +1,7 @@
-// Template module (given an object, render appropriate html)
-const template = (() => {
-	
-	const skill = (skill) => {
-		return `
-		<div class="skill">
-			<b>${skill.type}</b>: ${skill.names.join(" | ")}
-		</div>
-		`
-	};
-
-	const project = (project) => {
-		return `
-		<div class="project"> 
-			<span><b>${project.name}</b> (${project.description})</span> 
-			<span class="float-right">${date(project.startDate,project.endDate)}</span>
-				<ul>
-					${project.highlights.map(_highlight).join("")}
-				</ul>
-		</div>
-		`
-	};
-
-	const job = (job) => {
-		return `
-			<div class="job">
-				<span><b>${job.position}</b>, <i>${job.organization}</i>, ${job.location}</span> 
-				<span class="float-right">${date(job.startDate,job.endDate)}</span>
-				<ul>
-					${job.highlights.map(_highlight).join("")}
-				</ul>
-			</div>		
-		`
-	};
-
-	const award = (award) => {
-		return `<span>${award.title}, ${date(award.date)} (${award.summary})</span>`
-	};
-
-	const course = (course) => {
-		return `<span>${course.name} (${course.grade}%)</span>`
-	};
-
-	// produce <li> that represents given highlight 
-	const _highlight = (highlight) => {
-		if (highlight.subs === undefined) return `<li>${highlight}</li>`
-
-		return `
-		<li>${highlight.main}
-				${highlight.subs !== undefined && highlight.subs.length !== 0 ?
-						_highlightSubs(highlight.subs) : ""}
-		</li>
-		`
-	};
-
-	// produce <ul> that represents given highlight subs 
-	const _highlightSubs = (hlSubs) => {
-		return `
-		<ul>
-			${hlSubs.map(sub => {
-				return `<li>${sub}</li>`
-			}).join("")}
-		</ul>
-		`				
-	};
-	 
-	// if only year is given, produce formatted year, otherwise produce formatted start-end dates
-	const date = (...args) => {
-		if (args.length === 1) return `${args[0].split("-")[0]}` 
-
-		let start = args[0], end = args[1];
-		let months = ["Jan", "Feb", "Mar", 
-									"Apr", "May", "June", 
-									"July","Aug", "Sept",
-									"Oct","Nov", "Dec"];
-		
-		function formatDate(date) {
-			return months[date.getMonth()] + " " + date.getFullYear();
-		}
-
-		let startDate = formatDate(new Date(...start.split("-")));
-		let endDate = end !== "" ? formatDate(new Date(...end.split("-"))) : "";
-
-		return endDate === "" ? `${startDate}-Present` : 
-					startDate === endDate ? startDate : `${startDate}-${endDate}`; 
-	}
-
-	return { 
-		skill,
-		project,
-		job,
-		award,
-		course,
-		date
-	 };
-
-})();
-
-
-// Display Controller module
+/**
+ * Display Controller Module
+ * @desc included fns directly render html for primary resume sections  
+ */
 const displayController = (() => {
 	let _resume;
 
@@ -138,7 +42,7 @@ const displayController = (() => {
 		const skills = _resume.skills; 
 
 		$("#skills").html(`
-			${_renderTitle("SKILLS")}
+			${template.title("SKILLS")}
 			${skills.map(template.skill).join("")} 			
 			<span class="footnote float-right">*currently acquiring</span>
 			`
@@ -149,7 +53,7 @@ const displayController = (() => {
 		const projects = _resume.projects; 
 
 		$("#projects").html(`
-			${_renderTitle("TECHNICAL PROJECTS")}
+			${template.title("TECHNICAL PROJECTS")}
 			${projects.map(template.project).join("")} 			
 			`
 		);
@@ -159,7 +63,7 @@ const displayController = (() => {
 		const work = _resume.work; 
 
 		$("#work").html(`
-			${_renderTitle("WORK EXPERIENCE")}
+			${template.title("WORK EXPERIENCE")}
 			${work.map(template.job).join("")} 			
 			`
 		);
@@ -169,10 +73,10 @@ const displayController = (() => {
 		const education = _resume.education; 
 
 		$("#education").html(`
-			${_renderTitle("EDUCATION")}
+			${template.title("EDUCATION")}
 			<div class="ed-summary">
 				<span><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location}</span> 
-				<span class="float-right">Completion: ${template.date(education.endDate)}</span>
+				<span class="float-right">Completion: ${dateHandler.formatBegToEnd(education.endDate)}</span>
 			</div>
 			<ul>
 				<li>
@@ -185,14 +89,122 @@ const displayController = (() => {
 			`
 		);
 	};
-
-	const _renderTitle = (title) => {
-		return `<div class="section-title font-weight-bold text-center">${title}<hr></div>`;
-	};
 	
 	return { setResume, render };
 })();
 
+
+/**
+ * Template Module
+ * @desc included fns produce html for redundant JS objects
+ */
+const template = (() => {
+	
+	const skill = (skill) => {
+		return `
+		<div class="skill">
+			<b>${skill.type}</b>: ${skill.names.join(" | ")}
+		</div>
+		`
+	};
+
+	const project = (project) => {
+		return `
+		<div class="project"> 
+			<span><b>${project.name}</b> (${project.description})</span> 
+			<span class="float-right">${dateHandler.formatBegToEnd(project.startDate,project.endDate)}</span>
+				<ul>
+					${project.highlights.map(_highlight).join("")}
+				</ul>
+		</div>
+		`
+	};
+
+	const job = (job) => {
+		return `
+			<div class="job">
+				<span><b>${job.position}</b>, <i>${job.organization}</i>, ${job.location}</span> 
+				<span class="float-right">${dateHandler.formatBegToEnd(job.startDate,job.endDate)}</span>
+				<ul>
+					${job.highlights.map(_highlight).join("")}
+				</ul>
+			</div>		
+		`
+	};
+
+	const award = (award) => {
+		return `<span>${award.title}, ${dateHandler.formatBegToEnd(award.date)} (${award.summary})</span>`
+	};
+
+	const course = (course) => {
+		return `<span>${course.name} (${course.grade}%)</span>`
+	};
+
+	const title = (title) => {
+		return `<div class="section-title font-weight-bold text-center">${title}<hr></div>`;
+	};
+
+
+	const _highlight = (highlight) => {
+		if (highlight.subs === undefined) return `<li>${highlight}</li>`
+
+		return `
+		<li>${highlight.main}
+				${highlight.subs !== undefined && highlight.subs.length !== 0 ?
+						_highlightSubs(highlight.subs) : ""}
+		</li>
+		`
+	};
+
+	const _highlightSubs = (hlSubs) => {
+		return `
+		<ul>
+			${hlSubs.map(sub => {
+				return `<li>${sub}</li>`
+			}).join("")}
+		</ul>
+		`				
+	};
+
+	return { 
+		skill,
+		project,
+		job,
+		award,
+		course,
+		title
+	 };
+
+})();
+
+
+/**
+ * Date Handler Module
+ * @desc included fns deal with date formatting 
+ * expected date strings: yyyy/mm/dd
+ */
+const dateHandler = (() => {
+
+	const formatBegToEnd = (...args) => {
+		if (args.length === 1) return `${args[0].split("-")[0]}` // if only year is given, return formatted year
+
+		let startDate = args[0], endDate = args[1];
+		let months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+		
+		function formatDate(date) { // helper fn, returns formatted version of given date
+			return months[date.getMonth()] + " " + date.getFullYear();
+		}
+
+		let formattedStartDate = formatDate(new Date(...startDate.split("-")));
+		let formattedEndDate = endDate !== "" ? formatDate(new Date(...endDate.split("-"))) : "";
+
+		return endDate === "" ? `${formattedStartDate}-Present` : 				// {startDate}-Present 
+			formattedStartDate === formattedEndDate ? formattedStartDate : 	// {date} (months are same) 
+			`${formattedStartDate}-${formattedEndDate}`; 										// {startDate}-{endDate}
+	}
+
+	return { formatBegToEnd };
+})();
 
 api.requestJSON("https://dryu99.github.io/resume-json-html-converter/resume.json", 
 	(error, data) => {
