@@ -76,7 +76,7 @@ const displayController = (() => {
 			${template.title("EDUCATION")}
 			<div class="ed-summary">
 				<span><b>${education.degree}</b>, <i>${education.school}</i>, ${education.location}</span> 
-				<span class="float-right">Completion: ${dateHandler.formatBegToEnd(education.endDate)}</span>
+				<span class="float-right">Completion: ${dateHandler.formatYear(education.endDate)}</span>
 			</div>
 			<ul>
 				<li>
@@ -133,7 +133,7 @@ const template = (() => {
 	};
 
 	const award = (award) => {
-		return `<span>${award.title}, ${dateHandler.formatBegToEnd(award.date)} (${award.summary})</span>`
+		return `<span>${award.title}, ${dateHandler.formatYear(award.date)} (${award.summary})</span>`
 	};
 
 	const course = (course) => {
@@ -181,17 +181,14 @@ const template = (() => {
 /**
  * Date Handler Module
  * @desc included fns deal with date formatting 
- * expected date strings: yyyy/mm/dd
+ * all fns expect date strings in yyyy-mm-dd format 
  */
 const dateHandler = (() => {
 
-	const formatBegToEnd = (...args) => {
-		if (args.length === 1) return `${args[0].split("-")[0]}` // if only year is given, return formatted year
-
-		let startDate = args[0], endDate = args[1];
+	const formatBegToEnd = (startDate, endDate) => {
 		let months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
 		
-		function formatDate(date) { // helper fn, returns formatted version of given date
+		function formatDate(date) { // helper fn, returns formatted version of single date
 			return months[date.getMonth()] + " " + date.getFullYear();
 		}
 
@@ -203,7 +200,11 @@ const dateHandler = (() => {
 			`${formattedStartDate}-${formattedEndDate}`; 										// {startDate}-{endDate}
 	}
 
-	return { formatBegToEnd };
+	const formatYear = (date) => {
+		return `${date.split("-")[0]}`
+	}
+
+	return { formatBegToEnd, formatYear };
 })();
 
 api.requestJSON("https://dryu99.github.io/resume-json-html-converter/resume.json", 
