@@ -5,22 +5,20 @@
 const displayController = (() => {
 
 	const render = (resume) => {
-		_renderImages(resume);
-		_renderHeader(resume);
-		_renderSkills(resume);
-		_renderProjects(resume);
-		_renderWork(resume);
-		_renderEducation(resume);
+		_renderImages(resume.images);
+		_renderHeader(resume.header);
+		_renderSkills(resume.skills);
+		_renderProjects(resume.projects);
+		_renderWork(resume.work);
+		_renderEducation(resume.education);
 	};
 
-	const _renderImages = (resume) => {
-		$(".me-img").attr("src", resume.images.selfImage);
-		$(".coop-img").attr("src", resume.images.headerImage);
+	const _renderImages = (images) => {
+		$(".me-img").attr("src", images.selfImage);
+		$(".coop-img").attr("src", images.headerImage);
 	}
 
-	const _renderHeader = (resume) => {
-		const header = resume.header; 
-
+	const _renderHeader = (header) => {
 		$("#header").html(`
 			<div class="name-container">
 				<div class="my-name font-weight-bold">${header.name}</div>
@@ -36,9 +34,7 @@ const displayController = (() => {
 		);
 	}
 
-	const _renderSkills = (resume) => {
-		const skills = resume.skills; 
-
+	const _renderSkills = (skills) => {
 		$("#skills").html(`
 			${template.title("TECHNICAL SKILLS")}
 			${skills.map(template.skill).join("")} 			
@@ -47,9 +43,7 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderProjects = (resume) => {
-		const projects = resume.projects; 
-
+	const _renderProjects = (projects) => {
 		$("#projects").html(`
 			${template.title("TECHNICAL PROJECTS")}
 			${projects.map(template.project).join("")} 			
@@ -57,9 +51,7 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderWork = (resume) => {
-		const work = resume.work; 
-
+	const _renderWork = (work) => {
 		$("#work").html(`
 			${template.title("WORK EXPERIENCE")}
 			${work.map(template.job).join("")} 			
@@ -67,9 +59,7 @@ const displayController = (() => {
 		);
 	};
 
-	const _renderEducation = (resume) => {
-		const education = resume.education; 
-
+	const _renderEducation = (education) => {		
 		$("#education").html(`
 			${template.title("EDUCATION")}
 			<div class="ed-summary">
