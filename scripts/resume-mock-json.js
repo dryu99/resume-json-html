@@ -1,5 +1,5 @@
 const mockData = { 
-  "header": {
+    "header": {
     "name": "DANIEL RYU",
     "title": "YEAR 3, BUSINESS AND COMPUTER SCIENCE STUDENT",		
 		"phone": "999.999.9999",
