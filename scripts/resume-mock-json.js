@@ -1,17 +1,9 @@
 const mockData = { 
-<<<<<<< HEAD
     "header": {
     "name": "DANIEL RYU",
     "title": "YEAR 3, BUSINESS AND COMPUTER SCIENCE STUDENT",		
 		"phone": "999.999.9999",
     "email": "anemail@domain.com",    
-=======
-  "header": {
-    "name": "DANIEL RYU",
-    "title": "YEAR 3, BUSINESS AND COMPUTER SCIENCE STUDENT",		
-		"phone": "999.999.9999",
-    "email": "anemail@domain.com",    
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
     "websites": {
 			"github": "github.com/dryu99",
 			"linkedin": "linkedin.com/in/danielryu99"

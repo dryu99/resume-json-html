@@ -5,7 +5,6 @@
 const displayController = (() => {
 
 	const render = (resume) => {
-<<<<<<< HEAD
 		_renderImages(resume.images);
 		_renderHeader(resume.header);
 		_renderSkills(resume.skills);
@@ -20,24 +19,6 @@ const displayController = (() => {
 	}
 
 	const _renderHeader = (header) => {
-=======
-		_renderImages(resume);
-		_renderHeader(resume);
-		_renderSkills(resume);
-		_renderProjects(resume);
-		_renderWork(resume);
-		_renderEducation(resume);
-	};
-
-	const _renderImages = (resume) => {
-		$(".me-img").attr("src", resume.images.selfImage);
-		$(".coop-img").attr("src", resume.images.headerImage);
-	}
-
-	const _renderHeader = (resume) => {
-		const header = resume.header; 
-
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
 		$("#header").html(`
 			<div class="name-container">
 				<div class="my-name font-weight-bold">${header.name}</div>
@@ -53,13 +34,7 @@ const displayController = (() => {
 		);
 	}
 
-<<<<<<< HEAD
 	const _renderSkills = (skills) => {
-=======
-	const _renderSkills = (resume) => {
-		const skills = resume.skills; 
-
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
 		$("#skills").html(`
 			${template.title("TECHNICAL SKILLS")}
 			${skills.map(template.skill).join("")} 			
@@ -68,13 +43,7 @@ const displayController = (() => {
 		);
 	};
 
-<<<<<<< HEAD
 	const _renderProjects = (projects) => {
-=======
-	const _renderProjects = (resume) => {
-		const projects = resume.projects; 
-
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
 		$("#projects").html(`
 			${template.title("TECHNICAL PROJECTS")}
 			${projects.map(template.project).join("")} 			
@@ -82,13 +51,7 @@ const displayController = (() => {
 		);
 	};
 
-<<<<<<< HEAD
 	const _renderWork = (work) => {
-=======
-	const _renderWork = (resume) => {
-		const work = resume.work; 
-
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
 		$("#work").html(`
 			${template.title("WORK EXPERIENCE")}
 			${work.map(template.job).join("")} 			
@@ -96,13 +59,7 @@ const displayController = (() => {
 		);
 	};
 
-<<<<<<< HEAD
 	const _renderEducation = (education) => {		
-=======
-	const _renderEducation = (resume) => {
-		const education = resume.education; 
-
->>>>>>> d953405e2d327e03abf6df80e47cab5e1ac3577c
 		$("#education").html(`
 			${template.title("EDUCATION")}
 			<div class="ed-summary">
